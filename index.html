@@ -1,1 +1,115 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweat Wallet - Connect</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+      }
+      .container {
+        background-color: #09031c;
+        color: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+      .close-btn {
+        float: right;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+      .logo {
+        text-align: center;
+        margin-bottom: 1rem;
+        height: 60px;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .logo img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        align-items: center;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .qr-code {
+        background-color: #09031c;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .qr-code img {
+        max-width: 100%;
+        height: auto;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .btn {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 0.75rem 1rem;
+        border-radius: 9999px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+      }
+      .btn img {
+        margin-right: 0.5rem;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="close-btn" onclick="closeIframe()">&times;</span>
+      <div class="logo">
+        <img src="img/sweat-wallet-white.webp" alt="Sweat Wallet logo" />
+      </div>
+      <h2>Connect Wallet</h2>
+      <div class="qr-code">
+        <img src="img/qr.png" alt="QR Code" />
+      </div>
+      <div class="buttons">
+        <button class="btn">App Store</button>
+        <button class="btn">Google Play</button>
+      </div>
+      <p class="footer">Don't have an account yet? Download the app</p>
+    </div>
+
+    <script>
+      function closeIframe() {
+        window.parent.postMessage("close-iframe", window.location.origin);
+      }
+    </script>
+  </body>
+</html>
